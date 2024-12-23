@@ -1,0 +1,408 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*, html{
+  margin: 0px;
+  padding: 0px;
+}
+
+
+.app-nav-container {
+  @apply py-3 px-4 sm:py-3 sm:px-12;
+}
+.app-main-container {
+  @apply max-w-7xl px-4 py-4 sm:py-8 sm:px-12 mx-auto w-full;
+}
+
+.app-small-main-container {
+  @apply max-w-3xl mx-auto px-4 py-4 sm:py-12;
+}
+.app-modal-width {
+  width: min(90vw, 400px);
+  max-height: 90vh;
+}
+.modal-open {
+  overflow: hidden;
+}
+.app-kitchen-container {
+  @apply mx-auto py-4 sm:py-12;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.print-bill-main-container {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.app-print-bill-container {
+  width: 300px;
+  /* padding: 2px 2px 2px 2px; */
+  /* background-color: grey; */
+}
+.img-size {
+  width: 80px;
+}
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+  content: "Select some files";
+  display: inline-block;
+  background: linear-gradient(to bottom, #f9f9f9, #e3e3e3);
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  /* -webkit-user-select: none; */
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 10pt;
+}
+.custom-file-input:hover::before {
+  border-color: black;
+}
+.custom-file-input:active::before {
+  background: -webkit-linear-gradient(to bottom, #e3e3e3, #f9f9f9);
+}
+
+button {
+  @apply active:scale-90 transition-all duration-200;
+}
+button:disabled {
+  @apply active:scale-100;
+}
+.app-add-menu-header-container {
+  @apply max-w-7xl px-4 sm:px-8 sm:mt-0 py-3 sm:py-4;
+}
+/* .Dropdown-control{
+  border-radius: 15px;
+} */
+
+/* Animation Success Modal */
+.success-checkmark {
+  width: 80px;
+  height: 115px;
+  margin: 0 auto;
+}
+
+.success-checkmark .check-icon {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  border-radius: 50%;
+  box-sizing: content-box;
+  border: 4px solid #4caf50;
+}
+
+.success-checkmark .check-icon::before {
+  top: 3px;
+  left: -2px;
+  width: 30px;
+  transform-origin: 100% 50%;
+  border-radius: 100px 0 0 100px;
+}
+
+.success-checkmark .check-icon::after {
+  top: 0;
+  left: 30px;
+  width: 60px;
+  transform-origin: 0 50%;
+  border-radius: 0 100px 100px 0;
+  animation: rotate-circle 4.25s ease-in;
+}
+
+.success-checkmark .check-icon::before,
+.success-checkmark .check-icon::after {
+  content: "";
+  height: 100px;
+  position: absolute;
+  background: #ffffff;
+  transform: rotate(-45deg);
+}
+
+.success-checkmark .check-icon .icon-line {
+  height: 5px;
+  background-color: #4caf50;
+  display: block;
+  border-radius: 2px;
+  position: absolute;
+  z-index: 10;
+}
+
+.success-checkmark .check-icon .icon-line.line-tip {
+  top: 46px;
+  left: 14px;
+  width: 25px;
+  transform: rotate(45deg);
+  animation: icon-line-tip 0.75s;
+}
+
+.success-checkmark .check-icon .icon-line.line-long {
+  top: 38px;
+  right: 8px;
+  width: 47px;
+  transform: rotate(-45deg);
+  animation: icon-line-long 0.75s;
+}
+
+.success-checkmark .check-icon .icon-circle {
+  top: -4px;
+  left: -4px;
+  z-index: 10;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  position: absolute;
+  box-sizing: content-box;
+  border: 4px solid rgba(76, 175, 80, 0.5);
+}
+
+.success-checkmark .check-icon .icon-fix {
+  top: 8px;
+  width: 5px;
+  left: 26px;
+  z-index: 1;
+  height: 85px;
+  position: absolute;
+  transform: rotate(-45deg);
+  background-color: #ffffff;
+}
+
+@keyframes rotate-circle {
+  0% {
+    transform: rotate(-45deg);
+  }
+  5% {
+    transform: rotate(-45deg);
+  }
+  12% {
+    transform: rotate(-405deg);
+  }
+  100% {
+    transform: rotate(-405deg);
+  }
+}
+@keyframes icon-line-tip {
+  0% {
+    width: 0;
+    left: 1px;
+    top: 19px;
+  }
+  54% {
+    width: 0;
+    left: 1px;
+    top: 19px;
+  }
+  70% {
+    width: 50px;
+    left: -8px;
+    top: 37px;
+  }
+  84% {
+    width: 17px;
+    left: 21px;
+    top: 48px;
+  }
+  100% {
+    width: 25px;
+    left: 14px;
+    top: 45px;
+  }
+}
+@keyframes icon-line-long {
+  0% {
+    width: 0;
+    right: 46px;
+    top: 54px;
+  }
+  65% {
+    width: 0;
+    right: 46px;
+    top: 54px;
+  }
+  84% {
+    width: 55px;
+    right: 0px;
+    top: 35px;
+  }
+  100% {
+    width: 47px;
+    right: 8px;
+    top: 38px;
+  }
+}
+
+/* Animation Fail Modal */
+.zoom-in-out-box {
+  /* margin: 24px;
+  width: 50px;
+  height: 50px;
+  background: #f50057; */
+  animation: zoom-in-zoom-out 1s ease;
+}
+@keyframes zoom-in-zoom-out {
+  0% {
+    transform: scale(0, 0);
+  }
+  50% {
+    transform: scale(1.5, 1.5);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+/* Animation Loading Modal */
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Animation Sidebar */
+#slide {
+  left: -300px;
+  background: blue;
+  -webkit-animation: slide 0.5s forwards;
+  animation: slide 0.5s forwards;
+}
+
+@-webkit-keyframes slide {
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes slide {
+  100% {
+    left: 0;
+  }
+}
+.modal-open {
+  overflow: hidden;
+}
+.Dropdown-root .Dropdown-control {
+  @apply px-4 py-2 rounded-md w-full border border-app-light-grey;
+}
+
+.collapsible {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  padding: 14px;
+  width: 100%;
+  text-align: left;
+  outline: none;
+  border: solid 2px black;
+  border-radius: 6px;
+}
+
+.active, .collapsible:hover {
+  background-color: black;
+  color: white;
+  
+}
+
+.active{
+  border-radius: 6px 6px 0px 0px;
+  border-top: solid 2px black;
+  border-left: solid 2px black;
+  border-right: solid 2px black;
+  border-bottom: none;
+}
+
+.content {
+  padding: 14px;
+  display: none;
+  overflow: hidden;
+  background-color: white;
+  border: solid 2px black;
+  border-top: none;
+  border-radius: 0px 0px 6px 6px;
+}
+
+.input-form{
+  padding: 5px 10px;
+  @apply border-app-light-grey border rounded-md
+}
+
+.button{
+  transition: 0.5;
+  @apply px-4 py-2 bg-black text-white rounded-md
+}
+.button:hover{
+  opacity: 0.6;
+}
+
+.login-button{
+  transition: 0.5;
+  @apply px-4 py-2 text-white rounded-md
+}
+
+.btn-secondary{
+  transition: 0.5;
+  @apply px-4 py-2 bg-white border-2 border-black text-black rounded-md
+}
+.btn-secondary:hover{
+  opacity: 0.6;
+}
+
+.absolute-important{
+  position: absolute !important;
+}
+
+.seq-input{
+  @apply px-4 py-2 rounded-md w-full border border-app-light-grey
+}
+.input{
+  @apply px-4 py-2 rounded-md w-full border border-app-light-grey
+}
+
+.hover:hover{
+  @apply bg-gray-50
+}
+
+.react-datetime-picker__wrapper{
+  border-radius: 6px;
+  padding: 0px 4px;
+  border: thin solid rgb(209 213 219) !important;
+}
+
+.Dropdown-menu{
+  z-index: 10 !important;
+}
